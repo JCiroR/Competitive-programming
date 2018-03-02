@@ -34,10 +34,15 @@ int main() {
         AdjList[to].push_back(make_pair(weight, from));
     }
 
-    //Ejemplo: Recorrer hijos del nodo
-    int node = 1;
-    //Todos los elementos en la lista de hijos
-    for(int i = 0; i < AdjList[node].size(); i++) {
-        pair<int,int> child = AdjList[i];
-    }            
+    //Ejemplo: Imprimir los hijos de todos los nodos
+    //Indexando desde 1
+    for(int node = 1; node <= V; node++) {
+        cout << node << ": ";
+        //Todos los elementos en la lista de hijos
+        for(int i = 0; i < AdjList[node].size(); i++) {
+            pair<int,int> child = AdjList[node][i];
+            cout << child.second << " ";
+        }
+        cout << endl;
+    }               
 }

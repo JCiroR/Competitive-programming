@@ -27,10 +27,15 @@ int main() {
         // Si es no dirigido, agregar arista to -> from
         AdjMat[to][from] = weight;
     }
-    //Ejemplo: Recorrer hijos del nodo 1
-    int node = 1;
-    for(int i = 1; i <= V; i++) {
-        //Si hay una arista
-        if(AdjMat[node][i] != -1) process(i);
+    //Ejemplo: Imprimir los hijos de todos los nodos
+    //Indexando desde 1
+    for(int node = 1; node <= V; node++) {
+        cout << node << ": ";
+        for(int i = 1; i <= V; i++) {
+            //Si hay una arista node -> i
+            if(AdjMat[node][i] != -1)
+                cout << AdjMat[node][i]<< " ";
+        }
+        cout << endl;
     }
 }
