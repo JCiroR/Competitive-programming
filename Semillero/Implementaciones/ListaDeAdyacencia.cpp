@@ -39,7 +39,7 @@ int main() {
     for(int node = 1; node <= V; node++) {
         cout << node << ": ";
         //Todos los elementos en la lista de hijos
-        for(int i = 0; i < AdjList[node].size(); i++) {
+        for(int i = 0; i < AdjList[node].size(); i++) {
             pair<int,int> child = AdjList[node][i];
             cout << child.second << " ";
         }

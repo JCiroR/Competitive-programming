@@ -16,9 +16,11 @@ int main() {
     int V, E; 
     cin >> V >> E;
     int AdjMat[MAXV][MAXV];
-    //Inicializar el grafo en -1
-    fill(&AdjMat[0][0], AdjMat[0][0] + sizeof(AdjMat), -1);
-    //Añadir aristas
+    //Inicializar el grafo en -1    
+    for(int i = 0; i < MAXV; i++)
+        for(int j = 0; j < MAXV; j++)
+            AdjMat[i][j] = -1;
+    //Añadir aristas    
     int from, to, weight;
     for(int i = 0; i < E; i++) {
         cin >> from >> to >> weight;
@@ -28,13 +30,13 @@ int main() {
         AdjMat[to][from] = weight;
     }
     //Ejemplo: Imprimir los hijos de todos los nodos
-    //Indexando desde 1
+    //Indexando desde 1    
     for(int node = 1; node <= V; node++) {
         cout << node << ": ";
         for(int i = 1; i <= V; i++) {
             //Si hay una arista node -> i
             if(AdjMat[node][i] != -1)
-                cout << AdjMat[node][i]<< " ";
+                cout << i << " ";
         }
         cout << endl;
     }
