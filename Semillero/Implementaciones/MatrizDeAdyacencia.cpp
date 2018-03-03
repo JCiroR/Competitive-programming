@@ -7,10 +7,6 @@ using namespace std;
 //+1 Para indexar desde uno
 const int MAXV = 100 + 1;
 
-void process(int node) {
-    cout << node << endl;
-}
-
 int main() {
     //Numero de vertices y aristas que el problema requiere
     int V, E; 
@@ -26,8 +22,8 @@ int main() {
         cin >> from >> to >> weight;
         //Agregar arista from -> to con peso weight
         AdjMat[from][to] = weight;
-        // Si es no dirigido, agregar arista to -> from
-        AdjMat[to][from] = weight;
+        // Si es no dirigido, agregar arista to -> from con: 
+        // AdjMat[to][from] = weight;
     }
     //Ejemplo: Imprimir los hijos de todos los nodos
     //Indexando desde 1    
