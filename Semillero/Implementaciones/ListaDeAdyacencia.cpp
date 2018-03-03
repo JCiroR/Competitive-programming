@@ -61,14 +61,16 @@ int main() {
     //Poner en falso el arreglo de visitados antes de la llamada
     memset(visited, false, sizeof(visited));
     dfs(root);
-    //Ejemplo: Dfs desde un nodo
+    
+    //Ejemplo: Bfs desde un nodo
     cout << "Bfs: \n";
     memset(visited, false, sizeof(visited));
     bfs(root);
+    
     //Ejemplo: Dijkstra
     cout << "Distancia 1->5\n";
-    //Camino mas corto desde 1 a todos los nodos
     dijkstra(1);
+    //Camino mas corto de 1 a 5
     cout << distances[5] << endl;
 }
 
@@ -121,6 +123,7 @@ void dijkstra(int s) {
       	// Si la distancia que estoy procesando es mayor a la que ya habia encontrado, la ignoro
       	// Esta linea sirve para optimizar el algoritmo
       	if(curr_distance > distances[curr_node]) continue;
+        //Si la distancia era menor entonces miro qué distancias de mis hijos puedo mejorar
       	for(int i = 0; i < AdjList[curr_node].size(); i++) {
           	int next_node = AdjList[curr_node][i].second; 
           	int next_weight = AdjList[curr_node][i].first;
