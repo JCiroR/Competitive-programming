@@ -14,8 +14,10 @@ const int INF = 1 << 30;
 //Parejas (DistanciaRequerida, nodoAlQueVoy)
 vector<pair<int,int> > AdjList[MAXV];
 bool visited[MAXV];
+//Arreglo de distancias para dijkstra
 int distances[MAXV];
 
+//ignoren esto
 void dfs(int root);
 void bfs(int root);
 void dijkstra(int s);
