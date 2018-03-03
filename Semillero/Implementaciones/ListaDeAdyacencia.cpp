@@ -91,7 +91,7 @@ void bfs(int root) {
     q.push(s);
     visited[s.second] = true;    
     while(!q.empty()) {
-        //Sacar siguiente elemento, marcarlo como visitado
+        //Sacar siguiente elemento
         pair<int,int> current = q.front();
         q.pop();
         cout << current.second << endl;
