@@ -24,6 +24,7 @@ void union1(int x, int y)
 {
     int p = root(x);
     int q = root(y);
+    if(p == q) return;
     if(size[p] < size[q]) 
     {
         id[p] = id[q];
@@ -37,6 +38,7 @@ void union1(int x, int y)
 int setSize(int x) {
     x = root(x);
     return size[x];
+
 }
 
 int main(void) {

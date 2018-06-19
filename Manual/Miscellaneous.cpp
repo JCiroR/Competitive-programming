@@ -15,6 +15,15 @@ void derivate() {
     poly.pop_back();
 }
 
+
+//mod for neg numbers
+typedef long long ll;
+const ll MOD = 1e9 + 7;
+ll mod(ll b, ll MOD) {
+    if(b >= 0) return b % MOD;
+    else return ((MOD - 1) * ((-b) % MOD)) % MOD;
+}
+
 //Convert a number from radix 10 to any-other.
 string digits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 string toRadix(int number, int radix) {
