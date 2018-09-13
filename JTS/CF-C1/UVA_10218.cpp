@@ -4,7 +4,7 @@ typedef long long ll;
 
 double comb[110][110];
 
-int main() {
+void fill() {
     for(ll n = 0; n <= 100; n++) {
         comb[n][n] = 1;
         for(ll c = 1; c <= n; c++) {
@@ -12,6 +12,9 @@ int main() {
             comb[n][n - c] /= c;
         }
     }
+}
+
+int main() {
     double m, w;
     int c;
     while(scanf("%lf%lf%d", &m,&w,&c) == 3) {

@@ -7,9 +7,9 @@ using namespace std;
 #define MAXN 200
 
 int main(void) {
-    int V, E, AdjMat[MAXV][MAXV];
+    int V, E, AdjMat[MAXN][MAXN];
     scanf("%d %d", &V, &E);
-    for(int i = 0; i < V; i++) {
+    for(int i = 0; i < V; i++) {
         for(int j = 0; j < V; j++)
             AdjMat[i][j] = INF;
         AdjMat[i][i] = 0;

@@ -1,7 +1,5 @@
-#include <vector>
-#include <algorithm>
-#include <string>
-
+#include <bits/stdc++.h>
+using namespace std;
 //get Z-Array
 // Z[i] == length of the longest prefix of S starting at i
 vector<int> z(string s) {

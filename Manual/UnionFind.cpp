@@ -38,7 +38,6 @@ void union1(int x, int y)
 int setSize(int x) {
     x = root(x);
     return size[x];
-
 }
 
 int main(void) {

@@ -15,7 +15,6 @@ void derivate() {
     poly.pop_back();
 }
 
-
 //mod for neg numbers
 typedef long long ll;
 const ll MOD = 1e9 + 7;
@@ -96,4 +95,17 @@ int main()
     std::priority_queue<Foo, std::vector<Foo>, Compare> pq;
     std::priority_queue<Foo, std::vector<Foo>, std::function<bool(Foo, Foo)>> pq(Compare);
     return 0;
+}
+
+//Combinations
+double comb[110][110];
+
+void fill() {
+    for(ll n = 0; n <= 100; n++) {
+        comb[n][n] = 1;
+        for(ll c = 1; c <= n; c++) {
+            comb[n][n - c] = (n - c + 1) * comb[n][n - c + 1];
+            comb[n][n - c] /= c;
+        }
+    }
 }
