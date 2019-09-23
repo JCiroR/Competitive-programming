@@ -55,13 +55,11 @@ int lcm(int a, int b) { return a * (b / gcd(a, b)); }
     return res;
 }
 
-//Explore implicit 2D grid
-//          S,SE,E,NE, N,NW, W,SW neighbors
+//Explore implicit 2D grid  S,SE,E,NE, N,NW, W,SW neighbors
 int dr[] = {1, 1,0,-1,-1,-1, 0, 1}; 
 int dc[] = {0, 1,1, 1, 0,-1,-1,-1}; 
 
-//Only 4 ways
-//          S E  N  W
+//Only 4 ways  S E  N  W
 int dr[] = {1,0,-1, 0};
 int dc[] = {0,1, 0,-1};
 
@@ -89,9 +87,20 @@ class Compare {
 bool Compare(Foo, Foo) {   
     return true;
 }
+//On a struct
+struct Foo {
+    int att1;
+    int att2;
+    bool operator < (const Foo &second) const 
+    {
+        return att1 < second.att1;
+    }
+};
+
 //Usage
 int main()
 {
+    std::priority_queue<Foo> pq; //Struct
     std::priority_queue<Foo, std::vector<Foo>, Compare> pq;
     std::priority_queue<Foo, std::vector<Foo>, std::function<bool(Foo, Foo)>> pq(Compare);
     return 0;
@@ -99,7 +108,6 @@ int main()
 
 //Combinations
 double comb[110][110];
-
 void fill() {
     for(ll n = 0; n <= 100; n++) {
         comb[n][n] = 1;

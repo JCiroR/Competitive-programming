@@ -33,7 +33,7 @@ bool isPrime(ll n) {
 
 vi primeFactors(ll N) {
   vi factors;                   
-  ll PF_idx = 0, PF = primes[PF_idx] 
+  ll PF_idx = 0, PF = primes[PF_idx];
   while (N != 1 && (PF * PF <= N)) {   
     while (N % PF == 0) { N /= PF; factors.push_back(PF); }   
     PF = primes[++PF_idx];                           
