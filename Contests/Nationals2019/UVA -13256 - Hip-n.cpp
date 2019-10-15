@@ -19,9 +19,10 @@ int check_loss(int p) {
     if(p == 1) {
         int x1 = p1[next_p1 - 1][0],    y1 = p1[next_p1 - 1][1];
         for(int i = 0; i < next_p1 - 1; i++) {
-            int dx = p1[i][0] - x1,     dy = p1[i][1] - y1;
-            int x3 = p1[i][0] - dy,     y3 = p1[i][1] + dx;
-            int x4 = x3 - dx,           y4 = y3 - dy;
+            int x2 = p1[i][0], y2 = p1[i][1];
+            int dx = x2 - x1,     dy = y2 - y1;
+            int x3 = x2 - dy,     y3 = y2 + dx;
+            int x4 = x3 - dx,     y4 = y3 - dy;
             if(in_range(x3, y3) && in_range(x4, y4) && board[x3][y3] == p && board[x4][y4] == p)
                 return p;
             
